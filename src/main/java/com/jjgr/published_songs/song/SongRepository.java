@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface SongRepository extends JpaRepository<Song, Long>{
     @Query("SELECT s FROM Song s WHERE s.name = ?1")
     Optional<Song> findByName(String name);
+
+    void deleteByName(String name);
 }
